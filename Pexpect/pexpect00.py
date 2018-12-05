@@ -20,6 +20,8 @@ objeto.sendline('1234')
 objeto.expect('>')
 objeto.sendline('enable')
 objeto.sendline('1234')
+# A diferença entre sendline e send é que um envia o enter e o outro não. 
+# Para enviar o enter com o send, vc envia o \n
 objeto.sendline('sh ip int br')
 objeto.send('exit\n')
 
