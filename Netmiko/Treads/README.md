@@ -1,0 +1,6 @@
+# Utilização
+
+
+ Prereqs:
+  - Netmiko
+  - pprint
