@@ -1,12 +1,12 @@
 server {
   listen 80;
   listen [::]:80;
-  server_name wordpress.sagara.tec.br sagara.tec.br;
-  root /var/www/html/wordpress/;
+  server_name blog.sagara.tec.br sagara.tec.br;
+  root /var/www/html/blog/;
   index index.php index.html index.htm index.nginx-debian.html;
 
-  access_log /var/log/nginx/wordpress_access.log;
-  error_log /var/log/nginx/wordpress_error.log;
+  access_log /var/log/nginx/blog_access.log;
+  error_log /var/log/nginx/blog_error.log;
 
 
   location / {

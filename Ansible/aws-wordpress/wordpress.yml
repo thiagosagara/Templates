@@ -1,9 +1,9 @@
 ---
   - name: wordpress
-    hosts: aws-test
+    hosts: localhost
     become: yes
     #    connection: local
 
     roles:
-      - mysql-server
+ #     - mysql-server
       - wordpress
