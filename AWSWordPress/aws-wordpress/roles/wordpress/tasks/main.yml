@@ -16,12 +16,13 @@
       - php7.4-common
       - php7.4-gd
       - php7.4-json
+      - mysql
       update_cache: yes
 
 
   - name: Configurando o vhosts com templates
     template:
-      src: blog.sagara.tec.br
+      src: blog.sagara.tec.br.j2
       dest: /etc/nginx/sites-enabled/default
 
   - name: Download do projeto wordpress
@@ -32,7 +33,7 @@
  
   - name: Permissao
     ansible.builtin.file:
-      path: /var/www/html/blog
+      path: /var/www/html/wordpress
       owner: www-data
       group: www-data
       mode: '0755'
@@ -40,12 +41,12 @@
   - name: Arquivo de configuracao wordpress
     template:
       src: wp-config.php.j2
-      dest: /var/www/html/blog/wp-config.php  
+      dest: /var/www/html/wordpress/wp-config.php  
 
 #  - name: Criando arquivo index
 #    template:
 #      src: index.html.j2
-#      dest: /var/www/html/blog/index.html
+#      dest: /var/www/html/wordpress/index.html
 
   - name: Restart nginx
     service:
