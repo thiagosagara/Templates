@@ -2,7 +2,7 @@ terraform {
     required_providers {
       aws = {
         source = "hashicorp/aws"
-        version = "=> 4.16" 
+        version = "~> 4.16" 
       }
     }
 }
@@ -41,7 +41,7 @@ resource "aws_instance" "blog-sagaratec-app" {
   ami = "ami-052efd3df9dad4825"
   instance_type = "t3.micro"
 
-  tag = {
+  tags = {
     Name = "srv-blog-sagaratec-template"
   }
 
@@ -62,9 +62,9 @@ resource "aws_instance" "blog-sagaratec-app" {
 #       Allow: blog-sagaratec-web
 #
 #   Setar multiAZ
-resource "aws_rds_cluster_instance" "blog-sagaratec-db" {
-  
-}
+#resource "aws_rds_cluster_instance" "blog-sagaratec-db" {
+#  
+#}
 
 
 
@@ -82,9 +82,9 @@ resource "aws_rds_cluster_instance" "blog-sagaratec-db" {
 #       nós: 2
 #       AZ: 1a e 1b
 #       
-resource "aws_elasticache_cluster" "blog-sagaratec-sessoes" {
-  
-}
+#resource "aws_elasticache_cluster" "blog-sagaratec-sessoes" {
+#  
+#}
 
 
 
